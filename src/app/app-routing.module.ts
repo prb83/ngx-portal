@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -9,6 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'app',
+    loadChildren:
+      './../../../ngx-portal-app/src/app/dashboard/dashboard.module#NgxDashboardModule',
+  },
+  {
+    path: 'app/dashboard',
     loadChildren:
       './../../../ngx-portal-app/src/app/dashboard/dashboard.module#NgxDashboardModule',
   },

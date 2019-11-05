@@ -1,0 +1,71 @@
+/** ============================================================================
+* #start portal app styles
+*
+=============================================================================*/
+@ngxAppSidebarInactive: #85888c;
+@ngxAppSidebarLevel1DarkBg: #2c2d32;
+
+.ngx-portal-info {
+  height: 96vh;
+  order: 1;
+  transition: all .3s;
+}
+
+.ngx-portal-info--is-active {
+  width: 238px;
+}
+
+.ngx-portal-info--is-inactive {
+  width: 0px;
+}
+
+/** ============================================================================
+* statusbar-tasks ( new )
+*
+=============================================================================*/
+.overlay {
+  position: absolute;
+  opacity: 0.4;
+  z-index: 100;
+}
+
+.spinner {
+  position: absolute;
+  z-index: 110;
+  top: 50%;
+  left: 50%;
+
+}
+
+.ngx-statusbar-tasks {
+  position: absolute;
+  border-top: 1px solid rgba(21, 21, 21, 0.2);
+  background: #fafafa;
+  z-index: 30;
+  overflow: hidden;
+  width: 100%;
+  height: 30px;
+  margin-top: 1px;
+  bottom: 2px;
+  left: 1px;
+}
+
+.ngx-statusbar-action__icon {
+  color: @ngxAppSidebarInactive;
+
+  &:hover {
+    color: @ngxAppSidebarLevel1DarkBg;
+  }
+}
+
+@clBlueQuaternary: #2ab4e9;
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: @clBlueQuaternary;
+}
+
+/** ============================================================================
+* #end portal app styles
+*
+=============================================================================*/

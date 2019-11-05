@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store'
-import { NgxTodoInterface } from '../todo/interfaces/todo.interface'
+import { NgxTodoInterface } from 'projects/ngx-components/src/public_api'
 export const TODOS_LOADED = '[Ngx-Todo] Identifier if todos are loaded'
 export const TODO_CATEGORIES =
   '[Ngx-Todo] Discover this for detailed description'

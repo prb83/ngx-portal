@@ -1,9 +1,11 @@
 <div class="ngx-portal-root ngx-base-font-family">
-  <ngx-header
+  <ngpx-header
     class="ngx-portal-header"
-    [view]="'web'"
+    [view]="portalView"
     [navItems]="navItems"
-  ></ngx-header>
+  ></ngpx-header>
+<!-- #start App Navigation -->
+<ng-container *ngIf="portalView === 'web'">
   <main class="ngx-portal-content ngx-portal-content--web ">
     <router-outlet class=""></router-outlet>
   </main>
@@ -11,4 +13,40 @@
     <span>@Copyright</span>
     <span> <a [routerLink]="['/web/impressum/']">Impressum</a></span>
   </footer>
+</ng-container>
+<ng-container *ngIf="portalView === 'app'">
+    <div class="ngx-d--flex">
+      <ngpx-sidebar
+        [sideNavigationActive]="(sideNavigationIsActive | async)"
+
+        [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'"
+        (fireNavigationState)="fireNavigationState()">
+      </ngpx-sidebar>
+      <main #contentWrapper class="ngx-portal-content ngx-portal-content--app ngx-p--relative">
+        <router-outlet class=""></router-outlet>
+      </main>
+      <!-- Right Panel implementation -->
+      <!-- <div class="ngx-portal-info" *ngIf=" isAuthenticated$"
+        [ngClass]="{'ngx-portal-info--is-active':(infoViewState$ | async), 'ngx-portal-info--is-inactive': !(infoViewState$ | async)}">
+        <ngx-right-panel-app></ngx-right-panel-app>
+      </div> -->
+    </div>
+    <!-- Spinner and overlay-->
+      <!-- <section *ngIf="(overlayState$ | async)" class="overlay ngx-bg-grey-d--secondary ngx-w--100 ngx-h--100">
+        </section>
+          <section *ngIf="(spinnerState$ | async)" class="spinner">
+            <mat-spinner></mat-spinner>
+        </section> -->
+
+      <!-- Old sidebar -->
+        <!-- <ngx-sidebar-app [hidden]="!isAuthenticated$"
+        [sideNavigationActive]="(sideNavigationIsActive | async)"
+        [sideNavigationElements] = "sideNavigationElements"
+        [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'"
+
+        (fireNavigationState)="fireNavigationState()"></ngx-sidebar-app> -->
+
+</ng-container>
+<!-- #end App Navigation -->
+
 </div>

@@ -1,0 +1,23 @@
+{
+  "content": [],
+  "stage": {
+    "topic": "Test Artikel",
+    "copy": "test copy",
+    "headline": "Ein Artikel zum Testen des layouts",
+    "picture": "https://nangex-assets.s3.eu-central-1.amazonaws.com/media/pictures/<folder>/stryd.jpg"
+  },
+  "id": null,
+  "meta": {
+    "template": "Artikel",
+    "filter": null,
+    "updatedby": null,
+    "keywords": "test, laufen",
+    "createdby": null,
+    "updatedon": null,
+    "title": "testartikel",
+    "createdon": null,
+    "tags": "MeinTest, Test"
+  },
+  "publish": "Published",
+  "timestamp": null
+}

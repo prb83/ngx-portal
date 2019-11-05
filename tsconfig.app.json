@@ -5,6 +5,16 @@
     // "types": []
   },
   "files": ["src/main.ts", "src/polyfills.ts"],
-  "include": ["src/**/*.ts", "../ngx-portal-web/**/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "../ngx-portal-web/**/*.ts",
+    "../ngx-portal-app/src/app/dashboard/**/*.ts",
+    "../ngx-portal-app/src/app/login/**/*.ts",
+    "../ngx-portal-app/src/app/todo/**/*.ts",
+    "../ngx-portal-app/src/app/cms/**/*.ts",
+    "../ngx-portal-app/src/app/media/**/*.ts",
+    "../ngx-portal-app/src/app/weather/**/*.ts",
+    "../ngx-portal-app/src/app/learn/**/*.ts",
+  ],
   "exclude": ["src/test.ts", "src/**/*.spec.ts"]
 }

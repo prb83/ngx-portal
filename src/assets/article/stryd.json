@@ -1,0 +1,40 @@
+{
+  "content": [{
+      "paragraph": "Vor ca einem Jahr wurde das Thema Leistungsmessung beim Laufen etwas gehyped, Polar war daran nicht unschuldig, da für die neue Vantage V sehr viel Werbung gemacht wurde um das Thema Leistungsmessung am Handgelenk.. Mir viel dabei ein, dass ich bei meiner Suunto ( Spartan Sport WHR )  ebenfalls so etwas wie einen Leistungsmodus habe, den ich bis dato aber nur ignoriert hatte. Nach einigen Recherchen war mir klar das ich auf jedenfall mal mit Leistungssensor Trainieren sollte um mir auch fachlich ein Bild davon machen zu können ",
+      "pictureSize": "m",
+      "type": "column",
+      "headline": "Vorgeschichte",
+      "picture": "https://nangex-assets.s3.eu-central-1.amazonaws.com/media/pictures/<folder>/suunto-leistung.jpg"
+    },
+    {
+      "headline": "Evaluieren des Marktes",
+      "paragraph": "Als Frischling in Sachen Metrik- und Leistungssensoren war mir nicht bewusst das es in diesem Bereich jede Menge an Gadgets und Zubehör gibt. Mehr oder weniger brauchbar für meine Bedürfnisse. In die engere Auswahl ist dann Runscribe, Stryd und Shft gekommen. Die meisten meiner Anforderungen konnte der Sensor von Stryd erfüllen, Runscribe hat aber auch eine sehr Interessante Palette an Möglichkeiten. Der Sensor von Shft hat mir ebenfalls gut gefallen, da dieser noch in anderen Bereichen als Leistungsmessung Punkten konnte, habe ich diesen auch bestellt. Demnächst werde ich auch über Shft einen kleinen Testartikel verfassen."
+    },
+    {
+      "paragraph": "Der Sensor ist eingetroffen und macht vom Design schonmal Eindruck. Im Lieferumfang sind zwei Halterungen für die Laufschuhe mit dabei in den Farben orange und schwarz (Bild zeigt den orange farbenen Halter). Desweiteren findet man noch ein USB Kabel sowie noch die Ladeschale für den Stryd. Der Anschluss zum laden ist ein Micro-USB. Viele würden dort vielleicht lieber einen neueren USB-C Anschluss sehen. Für mich ist das aber nicht als negativ zu werten.",
+      "pictureSize": "m",
+      "headline": "Erstes Aufeinandertreffen",
+      "picture": "https://nangex-assets.s3.eu-central-1.amazonaws.com/media/pictures/<folder>/stryd-side.jpg"
+    }
+  ],
+  "stage": {
+    "topic": "Stryd Metrik Sensor",
+    "copy": "Trainingssteuerung mit Leistung. Hype oder tatsächlich eine alternative zu Herzfrequenz- und Tempotraining?",
+    "headline": "Training mit Leistungssensor",
+    "picture": "https://nangex-assets.s3.eu-central-1.amazonaws.com/media/pictures/<folder>/stryd.jpg"
+  },
+  "id": "stryd-sensor-1562874692325",
+  "meta": {
+    "template": "Artikel",
+    "filter": null,
+    "updatedby": null,
+    "keywords": "Gadgets, Sensor",
+    "createdby": "portal-admin@nangex.com",
+    "updatedon": null,
+    "title": "Stryd-Sensor",
+    "createdon": null,
+    "tags": "Gagdet, Training"
+  },
+  "publish": "Published",
+  "timestamp": 1562874692325
+}

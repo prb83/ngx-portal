@@ -3,33 +3,28 @@ import {
   createFeatureSelector,
   createSelector,
 } from '@ngrx/store'
-import * as fromApp from './ngx-app.reducers'
-import * as fromCms from './ngx-cms.reducers'
-import * as fromMedia from './ngx-media.reducers'
-import * as fromPopoverManager from './ngx-popover.reducers'
-import * as fromRightPanel from './ngx-right-panel.reducers'
-import * as fromTodo from './ngx-todo.reducers'
-import * as fromWeather from './ngx-weather.reducers'
+// import * as fromWeather from './ngx-weather.reducers'
+import * as ngxStore from 'projects/ngx-core/src/public_api'
 
 export interface State {
-  app: fromApp.NgxAppStateInterface
-  cms: fromCms.NgxCmsStateInterface
-  weather: fromWeather.NgxWeatherStateInterface
-  todo: fromTodo.NgxTodoStateInterface
-  popover: fromPopoverManager.NgxPopoverManagerStateInterface
-  rightpanel: fromRightPanel.NgxRightPanelStateInterface
-  meida: fromMedia.NgxMediaStateInterface
+  app: ngxStore.NgxAppStateInterface
+  cms: ngxStore.NgxCmsStateInterface
+  weather: ngxStore.NgxWeatherStateInterface
+  todo: ngxStore.NgxTodoStateInterface
+  popover: ngxStore.NgxPopoverManagerStateInterface
+  rightpanel: ngxStore.NgxRightPanelStateInterface
+  meida: ngxStore.NgxMediaStateInterface
 }
 // check if State as param works. conflict with type definitions
 // export const reducers: ActionReducerMap<State> = {
 export const reducers: ActionReducerMap<any> = {
-  app: fromApp.ngxAppReducer,
-  cms: fromCms.ngxCmsReducer,
-  weather: fromWeather.ngxWeatherReducer,
-  todo: fromTodo.ngxTodoReducer,
-  popover: fromPopoverManager.ngxPopoverManagerReducer,
-  rightpanel: fromRightPanel.ngxRightPanelReducer,
-  media: fromMedia.ngxMediaReducer,
+  app: ngxStore.ngxAppReducer,
+  cms: ngxStore.ngxCmsReducer,
+  weather: ngxStore.ngxWeatherReducer,
+  todo: ngxStore.ngxTodoReducer,
+  popover: ngxStore.ngxPopoverManagerReducer,
+  rightpanel: ngxStore.ngxRightPanelReducer,
+  media: ngxStore.ngxMediaReducer,
 }
 
 /** ============================================================================
@@ -37,67 +32,67 @@ export const reducers: ActionReducerMap<any> = {
  *
  =============================================================================*/
 
-export const getAppState = createFeatureSelector<fromApp.NgxAppStateInterface>(
+export const getAppState = createFeatureSelector<ngxStore.NgxAppStateInterface>(
   'app'
 )
 
 export const getHeaderHeadline = createSelector(
   getAppState,
-  fromApp.getHeaderHeadline
+  ngxStore.getHeaderHeadline
 )
 export const getContentFilter = createSelector(
   getAppState,
-  fromApp.getContentFilter
+  ngxStore.getContentFilter
 )
 
 export const getQuickEditViewIsOpen = createSelector(
   getAppState,
-  fromApp.getQuickEditViewOpen
+  ngxStore.getQuickEditViewOpen
 )
 export const getOverlayIsActive = createSelector(
   getAppState,
-  fromApp.getOverlayActive
+  ngxStore.getOverlayActive
 )
 export const getSpinnerIsActive = createSelector(
   getAppState,
-  fromApp.getSpinnerActive
+  ngxStore.getSpinnerActive
 )
 export const getSideNavigationActive = createSelector(
   getAppState,
-  fromApp.getSideNavigationActive
+  ngxStore.getSideNavigationActive
 )
 export const getQuickEditBarActive = createSelector(
   getAppState,
-  fromApp.getQuickEditBarActive
+  ngxStore.getQuickEditBarActive
 )
-export const getFullSize = createSelector(getAppState, fromApp.getFullSize)
+export const getFullSize = createSelector(getAppState, ngxStore.getFullSize)
 /** ============================================================================
  * user
  *
  =============================================================================*/
-export const getUser = createSelector(getAppState, fromApp.getUser)
+export const getUser = createSelector(getAppState, ngxStore.getUser)
 /** ============================================================================
  * popover manager
  *
  =============================================================================*/
 export const getPopoverManagerState = createFeatureSelector<
-  fromPopoverManager.NgxPopoverManagerStateInterface
+  ngxStore.NgxPopoverManagerStateInterface
 >('popover')
 export const getIsPopoverManagerViewOpen = createSelector(
   getPopoverManagerState,
-  fromPopoverManager.getPopoverManagerOpen
+  ngxStore.getPopoverManagerOpen
 )
 export const getPopoverManagerContent = createSelector(
   getPopoverManagerState,
-  fromPopoverManager.getPopoverManagerContent
+  ngxStore.getPopoverManagerContent
 )
 export const getPopoverManagerSelectedValue = createSelector(
   getPopoverManagerState,
-  fromPopoverManager.getPopoverManagerSelectedValue
+  ngxStore.getPopoverManagerSelectedValue
 )
 export const getPopoverManagerHeadline = createSelector(
   getPopoverManagerState,
-  fromPopoverManager.getPopoverManagerHeadline
+  ngxStore.getPopoverManagerHeadline
 )
 
 /** ============================================================================
@@ -105,140 +100,137 @@ export const getPopoverManagerHeadline = createSelector(
  *
  =============================================================================*/
 export const getRightPanelState = createFeatureSelector<
-  fromRightPanel.NgxRightPanelStateInterface
+  ngxStore.NgxRightPanelStateInterface
 >('rightpanel')
 
 export const getRightPanelOpen = createSelector(
   getRightPanelState,
-  fromRightPanel.getRightPanelOpen
+  ngxStore.getRightPanelOpen
 )
 export const getRightPanelType = createSelector(
   getRightPanelState,
-  fromRightPanel.getRightPanelType
+  ngxStore.getRightPanelType
 )
 /** ============================================================================
  * media module
  *
  =============================================================================*/
 export const getMediaState = createFeatureSelector<
-  fromMedia.NgxMediaStateInterface
+  ngxStore.NgxMediaStateInterface
 >('media')
 
-export const getMediaList = createSelector(
-  getMediaState,
-  fromMedia.getMediaList
-)
+export const getMediaList = createSelector(getMediaState, ngxStore.getMediaList)
 export const getMediaIsNew = createSelector(
   getMediaState,
-  fromMedia.getMediaIsNew
+  ngxStore.getMediaIsNew
 )
 export const getMediaDoubleIndex = createSelector(
   getMediaState,
-  fromMedia.getMediaDoubleIndex
+  ngxStore.getMediaDoubleIndex
 )
 /** ============================================================================
  * cms
  *
  =============================================================================*/
-export const getCmsState = createFeatureSelector<fromCms.NgxCmsStateInterface>(
+export const getCmsState = createFeatureSelector<ngxStore.NgxCmsStateInterface>(
   'cms'
 )
 export const getRightPanelCmsChoosenTag = createSelector(
   getCmsState,
-  fromCms.getRightPanelCmsTag
+  ngxStore.getRightPanelCmsTag
 )
 export const getRightPanelCmsMetaTemplate = createSelector(
   getCmsState,
-  fromCms.getRightPanelCmsMetaTemplate
+  ngxStore.getRightPanelCmsMetaTemplate
 )
 export const getCmsCurrentPageData = createSelector(
   getCmsState,
-  fromCms.getCmsCurrentPageValue
+  ngxStore.getCmsCurrentPageValue
 )
 export const getCmsPagesData = createSelector(
   getCmsState,
-  fromCms.getCmsPagesData
+  ngxStore.getCmsPagesData
 )
 export const getCmsPreviewIsActive = createSelector(
   getCmsState,
-  fromCms.getCmsPreviewIsActive
+  ngxStore.getCmsPreviewIsActive
 )
 export const getCmsIsCreatePage = createSelector(
   getCmsState,
-  fromCms.getCmsCreatePage
+  ngxStore.getCmsCreatePage
 )
 export const getCmsPageIsValidState = createSelector(
   getCmsState,
-  fromCms.getCmsPageIsValidState
+  ngxStore.getCmsPageIsValidState
 )
 /** ============================================================================
  * todo module
  *
  =============================================================================*/
 export const getTodoState = createFeatureSelector<
-  fromTodo.NgxTodoStateInterface
+  ngxStore.NgxTodoStateInterface
 >('todo')
-export const getTodos = createSelector(getTodoState, fromTodo.getTodos)
+export const getTodos = createSelector(getTodoState, ngxStore.getTodos)
 export const getTodosTypeCategory = createSelector(
   getTodoState,
-  fromTodo.getTodosTypeCategory
+  ngxStore.getTodosTypeCategory
 )
 export const getTodosTypeProject = createSelector(
   getTodoState,
-  fromTodo.getTodosTypeProject
+  ngxStore.getTodosTypeProject
 )
 export const getTodoCategories = createSelector(
   getTodoState,
-  fromTodo.getTodoCategories
+  ngxStore.getTodoCategories
 )
 export const getTodoProjects = createSelector(
   getTodoState,
-  fromTodo.getTodoProjects
+  ngxStore.getTodoProjects
 )
 export const getTodoFeaturesUser = createSelector(
   getTodoState,
-  fromTodo.getTodoFeaturesUser
+  ngxStore.getTodoFeaturesUser
 )
 export const getTodoFilter = createSelector(
   getTodoState,
-  fromTodo.getTodoFilter
+  ngxStore.getTodoFilter
 )
-export const getTodoColor = createSelector(getTodoState, fromTodo.getTodoColor)
+export const getTodoColor = createSelector(getTodoState, ngxStore.getTodoColor)
 export const getTodoDetail = createSelector(
   getTodoState,
-  fromTodo.getTodoDetail
+  ngxStore.getTodoDetail
 )
 
 export const getTodoRelations = createSelector(
   getTodoState,
-  fromTodo.getTodoRelations
+  ngxStore.getTodoRelations
 )
 export const getTodoKindOf = createSelector(
   getTodoState,
-  fromTodo.getTodoKindOf
+  ngxStore.getTodoKindOf
 )
 export const getTodoRepeat = createSelector(
   getTodoState,
-  fromTodo.getTodoRepeat
+  ngxStore.getTodoRepeat
 )
 export const getTodoDoTime = createSelector(
   getTodoState,
-  fromTodo.getTodoDoTime
+  ngxStore.getTodoDoTime
 )
 export const getTodoEnumProps = createSelector(
   getTodoState,
-  fromTodo.getTodoEnumProps
+  ngxStore.getTodoEnumProps
 )
 
 export const getActiveProject = createSelector(
   getTodoState,
-  fromTodo.getActiveProject
+  ngxStore.getActiveProject
 )
 // export const getActiveCategory = createSelector(
 //   getTodoState,
-//   fromTodo.getActiveCategory
+//   ngxStore.getActiveCategory
 // )
 export const getActiveType = createSelector(
   getTodoState,
-  fromTodo.getActiveType
+  ngxStore.getActiveType
 )

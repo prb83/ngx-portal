@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import { Store } from '@ngrx/store'
+import * as Actions from 'projects/ngx-core/src/public_api'
 import { NgxAuthService } from 'projects/ngx-core/src/public_api'
 import { PortalWebConfiguration } from './config/header-config.model'
-import * as App from './store/ngx-app.actions'
-import * as Todo from './store/ngx-todo.actions'
 import * as fromNgxRoot from './store/ngx.reducers'
 
 @Component({
@@ -95,10 +94,10 @@ export class AppComponent implements OnInit {
     this.navItems[2].active = user
   }
   openQuickEdit = () => {
-    this.store.dispatch(new Todo.TodoDetailReset())
-    this.store.dispatch(new App.QuickEditViewSetOpen())
+    this.store.dispatch(new Actions.TodoDetailReset())
+    this.store.dispatch(new Actions.QuickEditViewSetOpen())
   }
   fireNavigationState = () => {
-    this.store.dispatch(new App.SideNavigationSwitch())
+    this.store.dispatch(new Actions.SideNavigationSwitch())
   }
 }

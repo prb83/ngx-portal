@@ -8,6 +8,13 @@ import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io'
 import {
+  AppHeaderModule,
+  AppNavModule,
+  AppSidebarModule,
+  HeaderModule,
+  NgxComponentsModule,
+} from 'projects/ngx-components/src/public_api'
+import {
   ConfigService,
   NgxAuthInterceptorService,
   NgxCoreModule,
@@ -15,13 +22,6 @@ import {
 import { AppMaterialModule } from 'projects/ngx-portal-app/src/app/app-material/app-material.module'
 import { NgxDashboardModule } from 'projects/ngx-portal-app/src/app/dashboard/dashboard.module'
 import { PagesModule } from 'projects/ngx-portal-web/src/app/pages/pages.module'
-import {
-  AppHeaderModule,
-  AppNavModule,
-  AppSidebarModule,
-  HeaderModule,
-  NgxComponentsModule,
-} from '../../../ngx-components/src/public_api'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { reducers } from './store/ngx.reducers'

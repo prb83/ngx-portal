@@ -1,0 +1,49 @@
+{
+  "endpoints": {
+    "userServiceBaseUrl": "http://localhost:3232/api/v1",
+    "userServiceBaseUrlV2": "http://localhost:3232/api/v2"
+  },
+  "weather": {
+    "cities": "api/v1/weather/cities",
+    "conditions": "api/v1/weather/conditions",
+    "forecastDaily": "api/v1/weather/forecast",
+    "forecastHourly": "api/v1/weather/hourly",
+    "owConditions": "api/v1/weather/ow-forecast",
+    "owForecastDaily": "api/v1/weather/ow-forecast-days"
+  },
+  "s3endpoints": {
+    "readTodos": "api/v1/todos/read-all",
+    "createTodo": "api/v1/todos/create",
+    "updateTodo": "api/v1/todos/update",
+    "deleteTodo": "api/v1/todos/delete",
+    "updateUserFeatures": "api/v1/todos/update-user-features",
+    "readUserFeatures": "api/v1/todos/read-user-features",
+    "emailExist": "api/v2/user-auth/email",
+    "login": "api/v2/user-auth/email-login",
+    "signup": "api/v2/user-auth/create-account",
+    "userAuthData": "api/v2/user-auth/user-data",
+    "userUpdateData": "api/v2/user-auth/data",
+    "upload": "api/v1/blog/files/upload",
+    "binary": "api/v1/blog/files/binary",
+    "imageMock": "api/v1/blog/files/mock",
+    "mediaAssets": "api/v1/media/bucket-files",
+    "mediaAssetsRefresh": "api/v1/media/bucket-reset-cache",
+    "setMediaAssets": "api/v1/set-bucket-file",
+    "url": "https://s3.eu-central-1.amazonaws.com/nangex-assets/",
+    "urlMedia": "https://s3.eu-central-1.amazonaws.com/nangex-assets/media/pictures/",
+    "pages": "api/v1/blog/pages/all",
+    "createPage": "api/v1/blog/pages/create",
+    "updatePage": "api/v1/blog/pages/update",
+    "createPageHeadless": "api/v2/cms/page/create",
+    "updatePageHeadless": "api/v2/cms/page/update",
+    "deletePageHeadless": "api/v2/cms/page/delete",
+    "resetPageCache": "api/v1/blog/pages/reset-pages-array",
+    "landingPage": "api/v1/blog/pages/landing",
+    "mainCategoriePages": "api/v1/blog/pages/main-categories",
+    "subCategoriePages": "api/v1/blog/pages/sub-categories",
+    "articlePages": "api/v1/blog/pages/articles",
+    "pageById": "api/v1/blog/pages/page-by-id/",
+    "slackMessageChannel": "api/v1/slack//message-channel",
+    "slackMessageUser": "api/v1/slack/message-user"
+  }
+}

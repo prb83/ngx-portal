@@ -17,9 +17,8 @@ import { AppComponent } from './app.component';
 import { reducers } from './store/ngx.reducers';
 
 const config: SocketIoConfig = {
-  // url: window.location.origin,
-  url: 'http://localhost:3232/',
-  // url: 'https://prb.nangex-portal.com/',
+  // url: 'http://localhost:3232',
+  url: 'https://prb.nangex-portal.com/',
   options: {},
 }
 const appInitializerFn = (appConfig: ConfigService) => {

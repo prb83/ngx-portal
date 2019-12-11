@@ -16,12 +16,14 @@
 </ng-container>
 <ng-container *ngIf="portalView === 'app'">
     <div class="ngx-d--flex">
-      <ngpx-sidebar
+      <ng-container *ngIf="isAuthenticated$">
+        <ngpx-sidebar
         [sideNavigationActive]="(sideNavigationIsActive | async)"
 
         [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'"
         (fireNavigationState)="fireNavigationState()">
       </ngpx-sidebar>
+    </ng-container>
       <main #contentWrapper class="ngx-portal-content ngx-portal-content--app ngx-p--relative">
         <router-outlet class=""></router-outlet>
       </main>

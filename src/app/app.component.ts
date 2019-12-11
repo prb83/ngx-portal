@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core'
-import { NavigationEnd, Router } from '@angular/router'
-import { Store } from '@ngrx/store'
-import * as Actions from 'projects/ngx-core/src/public_api'
-import { NgxAuthService } from 'projects/ngx-core/src/public_api'
-import { PortalWebConfiguration } from './config/header-config.model'
-import * as fromNgxRoot from './store/ngx.reducers'
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as Actions from 'projects/ngx-core/src/public_api';
+import { NgxAuthService } from 'projects/ngx-core/src/public_api';
+import { PortalWebConfiguration } from './config/header-config.model';
+import * as fromNgxRoot from './store/ngx.reducers';
+
+
+
 
 @Component({
   selector: 'ngx-portal-root',
@@ -17,26 +20,32 @@ export class AppComponent implements OnInit {
   // @description:
   config: any
   //  @description: view templates for web or app
-  portalView = 'web'
+  portalView = 'app'
   //  @description:  items for top navigation in header
   navItems = [
     {
-      name: 'Nangex Web',
+      name: 'Portal-Web',
       active: this.portalView.indexOf('web') > -1,
       destination: '/web',
       available: true,
+      type: 'link',
+      iconName: 'fas fa-globe'
     },
     {
-      name: 'Nangex App',
+      name: 'Portal-App',
       active: this.portalView.indexOf('app') > -1,
       destination: '/app',
       available: false,
+      type: 'link',
+      iconName: 'fas fa-archive'
     },
     {
       name: 'Account',
       active: this.portalView.indexOf('user') > -1,
       destination: '/app/login',
       available: true,
+      type: 'icon',
+      iconName: 'far fa-user'
     },
   ]
   // @description: authentification state of user

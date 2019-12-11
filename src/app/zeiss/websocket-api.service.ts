@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Socket } from "phoenix";
+// import { Socket } from "phoenix";
 
 
 @Injectable({
@@ -8,12 +8,12 @@ import { Socket } from "phoenix";
 export class WebsocketApiService {
   constructor(){
     // Open Socket connection
-    const socket = new Socket("ws://machinestream.herokuapp.com/api/v1/events");
-    socket.connect();
+    // const socket = new Socket("ws://machinestream.herokuapp.com/api/v1/events");
+    // socket.connect();
 
-    // Join correct channel and log events
-    const channel = socket.channel("events", {});
-    channel.join();
-    channel.on("new", event => console.log(event));
+    // // Join correct channel and log events
+    // const channel = socket.channel("events", {});
+    // channel.join();
+    // channel.on("new", event => console.log(event));
   }
 }

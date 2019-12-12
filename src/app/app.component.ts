@@ -88,24 +88,40 @@ export class AppComponent implements OnInit {
    * view methods
    *
    =============================================================================*/
+   /**
+    * @description: currently set header ever to app only set active element to web or app
+    * @memberOf AppComponent
+    */
   initPortal = (url: string) => {
-    if (url.indexOf('app') > -1 && this.portalView === 'web') {
+    if (url.indexOf('app') > -1 ) {
       this.portalView = 'app'
       this.setNavItemsActive(false, true, false)
-    } else if (url.indexOf('web') > -1 && this.portalView === 'app') {
+    } else if (url.indexOf('web') > -1) {
       this.portalView = 'web'
       this.setNavItemsActive(true, false, false)
     }
   }
+  /**
+   * @description: set header links to visual active state for web app or user
+   * @memberOf AppComponent
+   */
   setNavItemsActive = (web: boolean, app: boolean, user: boolean) => {
     this.navItems[0].active = web
     this.navItems[1].active = app
     this.navItems[2].active = user
   }
+  /**
+   * @description: set visible state of quick edit and hide detail view
+   * @memberOf AppComponent
+   */
   openQuickEdit = () => {
     this.store.dispatch(new Actions.TodoDetailReset())
     this.store.dispatch(new Actions.QuickEditViewSetOpen())
   }
+  /**
+   * @description: Dispatch navigagtion state
+   * @memberOf AppComponent
+   */
   fireNavigationState = () => {
     this.store.dispatch(new Actions.SideNavigationSwitch())
   }

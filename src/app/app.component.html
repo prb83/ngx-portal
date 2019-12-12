@@ -3,7 +3,9 @@
     class="ngx-portal-header"
     [view]="portalView"
     [navItems]="navItems"
-  ></ngpx-header>
+  >
+<div select="[headerNavItems]">test test test test</div>
+</ngpx-header>
 <!-- #start App Navigation -->
 <ng-container *ngIf="portalView === 'web'">
   <main class="ngx-portal-content ngx-portal-content--web ">

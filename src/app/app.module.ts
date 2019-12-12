@@ -10,6 +10,7 @@ import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io'
 import {
   AppHeaderModule,
   AppNavModule,
+  AppOptionsModule,
   AppSidebarModule,
   HeaderModule,
   NgxComponentsModule,
@@ -43,6 +44,7 @@ const appInitializerFn = (appConfig: ConfigService) => {
     AppRoutingModule,
     NgxCoreModule,
     NgxComponentsModule,
+    AppOptionsModule,
     AppSidebarModule,
     AppHeaderModule,
     AppNavModule,

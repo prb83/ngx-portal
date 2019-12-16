@@ -4,7 +4,14 @@
     [view]="'app'"
     [navItems]="navItems"
   >
-<div select="[headerNavItems]">test test test test</div>
+    <div select="[headerNavItems]" class="ngx-d--flex">
+        <ngpx-sidebar
+        [sideNavigationActive]="(sideNavigationIsActive | async)"
+        [sideNavigationElements] = "sideNavigationElements"
+        (fireNavigationState)="fireNavigationState()">
+      </ngpx-sidebar>
+      <!-- [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'" -->
+    </div>
 </ngpx-header>
 <!-- #start App Navigation -->
 <ng-container *ngIf="portalView === 'web'">
@@ -19,12 +26,7 @@
 <ng-container *ngIf="portalView === 'app'">
     <div class="ngx-d--flex">
       <ng-container *ngIf="isAuthenticated$">
-        <ngpx-sidebar
-        [sideNavigationActive]="(sideNavigationIsActive | async)"
 
-        [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'"
-        (fireNavigationState)="fireNavigationState()">
-      </ngpx-sidebar>
     </ng-container>
       <main #contentWrapper class="ngx-portal-content ngx-portal-content--app ngx-p--relative">
         <router-outlet class=""></router-outlet>

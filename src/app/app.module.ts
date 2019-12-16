@@ -25,6 +25,8 @@ import { NgxDashboardModule } from 'projects/ngx-portal-app/src/app/dashboard/da
 import { PagesModule } from 'projects/ngx-portal-web/src/app/pages/pages.module'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { LogFirstService } from './log-first.service'
+import { LogSecondService } from './log-second.service'
 import { reducers } from './store/ngx.reducers'
 const config: SocketIoConfig = {
   // url: 'http://localhost:3232',
@@ -34,6 +36,13 @@ const config: SocketIoConfig = {
 const appInitializerFn = (appConfig: ConfigService) => {
   return () => {
     return appConfig.loadAppConfig()
+  }
+}
+export function getLogService(useOAuth: boolean) {
+  if (useOAuth) {
+    return new LogFirstService()
+  } else {
+    return LogSecondService
   }
 }
 @NgModule({
@@ -65,8 +74,13 @@ const appInitializerFn = (appConfig: ConfigService) => {
       useClass: NgxAuthInterceptorService,
       multi: true,
     },
-
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } },
+    { provide: 'ENABLE_OAUTH', useValue: true },
+    {
+      provide: LogFirstService,
+      useFactory: getLogService,
+      deps: ['ENABLE_OAUTH'],
+    },
   ],
   bootstrap: [AppComponent],
 })

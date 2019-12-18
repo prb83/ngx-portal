@@ -28,22 +28,22 @@ export class AppComponent implements OnInit {
       active: this.portalView.indexOf('web') > -1,
       destination: '/web',
       available: true,
-      type: 'link',
+      type: 'icon',
       iconName: 'fas fa-globe'
     },
-    {
+    /*{
       name: 'Portal-App',
       active: this.portalView.indexOf('app') > -1,
       destination: '/app',
       available: false,
       type: 'link',
       iconName: 'fas fa-archive'
-    },
+    },*/
     {
       name: 'Account',
-      active: this.portalView.indexOf('user') > -1,
-      destination: '/app/login',
-      available: true,
+      active: this.portalView.indexOf('app') > -1,
+      destination: '/app',
+      available: false,
       type: 'icon',
       iconName: 'far fa-user'
     },
@@ -155,7 +155,7 @@ export class AppComponent implements OnInit {
       },
     ]
   // @description: authentification state of user
-  private isAuthenticated$ = false
+   isAuthenticated$ = false
 
   constructor(
     private _router: Router,
@@ -214,7 +214,7 @@ export class AppComponent implements OnInit {
   setNavItemsActive = (web: boolean, app: boolean, user: boolean) => {
     this.navItems[0].active = web
     this.navItems[1].active = app
-    this.navItems[2].active = user
+    //this.navItems[2].active = user
   }
   /**
    * @description: set visible state of quick edit and hide detail view

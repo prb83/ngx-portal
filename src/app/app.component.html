@@ -6,11 +6,12 @@
   >
     <div select="[headerNavItems]" class="ngx-d--flex">
         <ngpx-sidebar
-        [sideNavigationActive]="(sideNavigationIsActive | async)"
         [sideNavigationElements] = "sideNavigationElements"
         (fireNavigationState)="fireNavigationState()">
       </ngpx-sidebar>
-      <!-- [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'" -->
+      <!-- [sideNavigationActive]="(sideNavigationIsActive | async)"
+         [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'"
+      -->
     </div>
 </ngpx-header>
 <!-- #start App Navigation -->

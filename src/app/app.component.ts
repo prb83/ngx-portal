@@ -5,6 +5,7 @@ import * as Actions from 'projects/ngx-core/src/public_api';
 import { NgxAuthService } from 'projects/ngx-core/src/public_api';
 import { PortalWebConfiguration } from './config/header-config.model';
 import * as fromNgxRoot from './store/ngx.reducers';
+import { HeaderLink } from 'projects/ngx-components/src/lib/header/header';
 
 
 
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
   //  @description: view templates for web or app
   portalView = 'app'
   //  @description:  items for top navigation in header
-  navItems = [
+  navItems:Array<HeaderLink> = [
     {
       name: 'Portal-Web',
       active: this.portalView.indexOf('web') > -1,
@@ -52,7 +53,7 @@ export class AppComponent implements OnInit {
       {
         prefix: 'fas',
         name: 'tachometer-alt',
-        text: 'Dashboard',
+        text: 'Control',
         isActive: false,
         link: '/app/dashboard',
         isVisible: true,

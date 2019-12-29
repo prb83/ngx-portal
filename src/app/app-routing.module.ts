@@ -27,7 +27,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'app/login',
+    path: 'app/account',
     loadChildren:
       './../../../ngx-portal-app/src/app/login/login.module#AppLoginModule',
   },

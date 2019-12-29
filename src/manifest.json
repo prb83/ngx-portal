@@ -1,7 +1,7 @@
 {
-  "name": "ngx-portal-web",
-  "short_name": "ngx-pwa-web",
-  "theme_color": "#1976d2",
+  "name": "brix-running",
+  "short_name": "brix-run",
+  "theme_color": "#203a43",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": ".",

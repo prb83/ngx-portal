@@ -1,35 +1,57 @@
 <div class="ngx-portal-root ngx-base-font-family">
   <ngpx-header
-    class="ngx-portal-header"
-    [view]="'app'"
+    class="ngpx-portal-header"
+    [view]="portalView"
     [navItems]="navItems"
+    [showMenu]="showMenu"
+    [customColor]="'ngpx-portal-header__nav--100'"
   >
     <div select="[headerNavItems]" class="ngx-d--flex">
         <ngpx-sidebar
         [sideNavigationElements] = "sideNavigationElements"
         (fireNavigationState)="fireNavigationState()">
       </ngpx-sidebar>
-      <!-- [sideNavigationActive]="(sideNavigationIsActive | async)"
-         [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'"
-      -->
     </div>
 </ngpx-header>
-<!-- #start App Navigation -->
+<!-- #start web Navigation -->
 <ng-container *ngIf="portalView === 'web'">
-  <main class="ngx-portal-content ngx-portal-content--web ">
+  <ngpx-web-module-bar>
+    <div class="ngx-d--flex ngx-flex--row ngpx-color-primary-1010 ngx-base-font-size--3 ngpx-actions-menu">
+      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
+        <h4 class="ngx-no-padding-margin ngpx-uppercase">Home</h4>
+      </div>
+      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
+        <h4 class="ngx-no-padding-margin ngpx-uppercase">Laufen</h4>
+      </div>
+      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
+        <h4 class="ngx-no-padding-margin ngpx-uppercase">Training</h4>
+      </div>
+      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
+        <h4 class="ngx-no-padding-margin ngpx-uppercase">Ernährung</h4>
+      </div>
+      <div class="ngpx-bar ngpx-bar--middle">
+        <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
+          <ngx-input-text [type]="'search'"></ngx-input-text>
+        </div>
+      </div>
+      <!-- <div class="ngpx-bar ngpx-bar--right">right</div> -->
+    </div>
+  </ngpx-web-module-bar>
+  <main class="ngpx-portal-content ngpx-portal-content--web">
     <router-outlet class=""></router-outlet>
   </main>
-  <footer class="ngx-portal-footer ngx-portal--light ngx-base-font-size--3">
-    <span>@Copyright</span>
-    <span> <a [routerLink]="['/web/impressum/']">Impressum</a></span>
+  <footer class="ngpx-portal-footer ngx-portal--dark ngx-base-font-size--3">
+    <span>@Brix-Running</span>
+    <span class=""> <a class="ngpx-portal-footer__link-impress ngpx-color-primary-100 ngx-hover ngx-hover--primary" [routerLink]="['/web/impressum/']">Impressum</a></span>
   </footer>
 </ng-container>
+
+<!-- #start app Navigation -->
 <ng-container *ngIf="portalView === 'app'">
     <div class="ngx-d--flex">
       <ng-container *ngIf="isAuthenticated$">
-
     </ng-container>
-      <main #contentWrapper class="ngx-portal-content ngx-portal-content--app ngx-p--relative">
+      <main #contentWrapper class="ngpx-portal-content ngpx-portal-content--app ngx-p--relative">
         <router-outlet class=""></router-outlet>
       </main>
       <!-- Right Panel implementation -->

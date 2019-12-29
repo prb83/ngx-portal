@@ -7,13 +7,16 @@ import { ServiceWorkerModule } from '@angular/service-worker'
 import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io'
+// import { WebBarModule } from 'projects/ngx-components/src/lib/web-module-bar/web-module-bar.module'
 import {
-  AppHeaderModule,
+  AppBarModule,
   AppNavModule,
   AppOptionsModule,
   AppSidebarModule,
   HeaderModule,
   NgxComponentsModule,
+  WebBarModule,
+  WebModuleContentRowModule,
 } from 'projects/ngx-components/src/public_api'
 import {
   ConfigService,
@@ -55,7 +58,9 @@ export function getLogService(useOAuth: boolean) {
     NgxComponentsModule,
     AppOptionsModule,
     AppSidebarModule,
-    AppHeaderModule,
+    AppBarModule,
+    WebBarModule,
+    WebModuleContentRowModule,
     AppNavModule,
     NgxDashboardModule,
     PagesModule,

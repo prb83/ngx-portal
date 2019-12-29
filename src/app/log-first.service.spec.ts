@@ -1,12 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing'
 
-import { LogFirstService } from './log-first.service';
+import { LogFirstService } from './log-first.service'
 
 describe('LogFirstService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({}))
 
   it('should be created', () => {
-    const service: LogFirstService = TestBed.get(LogFirstService);
-    expect(service).toBeTruthy();
-  });
-});
+    const service: LogFirstService = TestBed.get(LogFirstService)
+    expect(service).toBeTruthy()
+  })
+})

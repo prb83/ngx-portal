@@ -33,7 +33,7 @@ import { LogSecondService } from './log-second.service'
 import { reducers } from './store/ngx.reducers'
 const config: SocketIoConfig = {
   // url: 'http://localhost:3232',
-  url: 'https://prb.nangex-portal.com/',
+  url: 'https://www.brix-running.de/',
   options: {},
 }
 const appInitializerFn = (appConfig: ConfigService) => {

@@ -6,6 +6,7 @@ import * as Actions from 'projects/ngx-core/src/public_api'
 import { NgxAuthService } from 'projects/ngx-core/src/public_api'
 import { PortalWebConfiguration } from './config/header-config.model'
 import * as fromNgxRoot from './store/ngx.reducers'
+import { PagesWebService } from 'projects/ngx-components/src/public_api'
 
 @Component({
   selector: 'ngx-portal-root',
@@ -158,7 +159,8 @@ export class AppComponent implements OnInit {
   constructor(
     private _router: Router,
     private _ngxAuthService: NgxAuthService,
-    private store: Store<fromNgxRoot.State>
+    private store: Store<fromNgxRoot.State>,
+    private _pagesWebService: PagesWebService
   ) {
     this.headerConfig = new PortalWebConfiguration().headerConfig
   }

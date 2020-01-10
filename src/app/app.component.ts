@@ -30,14 +30,6 @@ export class AppComponent implements OnInit {
       type: 'icon',
       iconName: 'fas fa-globe',
     },
-    /*{
-      name: 'Portal-App',
-      active: this.portalView.indexOf('app') > -1,
-      destination: '/app',
-      available: false,
-      type: 'link',
-      iconName: 'fas fa-archive'
-    },*/
     {
       name: 'Account',
       active: this.portalView.indexOf('app') > -1,
@@ -163,6 +155,8 @@ export class AppComponent implements OnInit {
     private _pagesWebService: PagesWebService
   ) {
     this.headerConfig = new PortalWebConfiguration().headerConfig
+    this._pagesWebService.getGqlData()
+    
   }
   ngOnInit(): void {
     // check url by navigationend to deside if app or web view

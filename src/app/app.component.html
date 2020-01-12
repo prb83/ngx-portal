@@ -16,18 +16,11 @@
 <!-- #start web Navigation -->
 <ng-container *ngIf="portalView === 'web'">
   <ngpx-web-module-bar>
-    <div class="ngx-d--flex ngx-flex--row ngpx-color-primary-1010 ngx-base-font-size--3 ngpx-actions-menu">
-      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
-        <h4 class="ngx-no-padding-margin ngpx-uppercase">Home</h4>
-      </div>
-      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
-        <h4 class="ngx-no-padding-margin ngpx-uppercase">Laufen</h4>
-      </div>
-      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
-        <h4 class="ngx-no-padding-margin ngpx-uppercase">Training</h4>
-      </div>
-      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
-        <h4 class="ngx-no-padding-margin ngpx-uppercase">Ernährung</h4>
+    <div class="ngx-d--flex ngx-flex--row ngpx-color-primary-1010 ngx-base-font-size--3 ngpx-actions-menu" *ngIf="(portalTopics$ | async)">
+      
+      
+      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary" *ngFor="let item of (portalTopics$ | async)">
+        <h4 class="ngx-no-padding-margin ngpx-uppercase">{{item.name}}</h4>
       </div>
       <div class="ngpx-bar ngpx-bar--middle">
         <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">

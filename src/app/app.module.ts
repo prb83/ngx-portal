@@ -31,6 +31,7 @@ import { AppComponent } from './app.component'
 import { LogFirstService } from './log-first.service'
 import { LogSecondService } from './log-second.service'
 import { reducers } from './store/ngx.reducers'
+import { GraphqlModule } from 'projects/ngx-core/src/lib/graphql/graphql.module'
 const config: SocketIoConfig = {
   // url: 'http://localhost:3232',
   url: 'https://www.brix-running.de/',
@@ -55,6 +56,7 @@ export function getLogService(useOAuth: boolean) {
     BrowserAnimationsModule,
     AppRoutingModule,
     NgxCoreModule,
+    GraphqlModule,
     NgxComponentsModule,
     AppOptionsModule,
     AppSidebarModule,

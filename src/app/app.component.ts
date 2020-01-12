@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
   config: any
   //  @description: view templates for web or app
   portalView = 'app'
+  // @description: items in topbar for topics of blog
+  portalTopics$ = this._pagesWebService.getGqlApplicationTopicData()
   //  @description:  items for top navigation in header
   navItems: Array<HeaderLink> = [
     {
@@ -155,8 +157,9 @@ export class AppComponent implements OnInit {
     private _pagesWebService: PagesWebService
   ) {
     this.headerConfig = new PortalWebConfiguration().headerConfig
-    this._pagesWebService.getGqlData()
-    
+    this._pagesWebService.getGqlApplicationTopicData().subscribe(data => {
+      console.log('topicData: ', data)
+    })
   }
   ngOnInit(): void {
     // check url by navigationend to deside if app or web view

@@ -195,7 +195,6 @@ export class AppComponent implements OnInit {
   setNavItemsActive = (web: boolean, app: boolean, user: boolean) => {
     this.navItems[0].active = web
     this.navItems[1].active = app
-    //this.navItems[2].active = user
   }
   /**
    * @description: set visible state of quick edit and hide detail view

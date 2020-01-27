@@ -22,7 +22,7 @@ import {
   ConfigService,
   NgxAuthInterceptorService,
   NgxCoreModule,
-  GraphqlModule
+  GraphqlModule,
 } from 'projects/ngx-core/src/public_api'
 import { AppMaterialModule } from 'projects/ngx-portal-app/src/app/app-material/app-material.module'
 import { NgxDashboardModule } from 'projects/ngx-portal-app/src/app/dashboard/dashboard.module'

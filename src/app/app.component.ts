@@ -135,9 +135,6 @@ export class AppComponent implements OnInit {
     private _pagesWebService: PagesWebService
   ) {
     this.headerConfig = new PortalWebConfiguration().headerConfig
-    this._pagesWebService.getGqlApplicationTopicData().subscribe(data => {
-      console.log('topicData: ', data)
-    })
   }
   ngOnInit(): void {
     // check url by navigationend to deside if app or web view

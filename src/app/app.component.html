@@ -16,7 +16,7 @@
 <!-- #start web Navigation -->
 <ng-container *ngIf="portalView === 'web'">
   <ngpx-web-module-bar>
-    <div class="ngx-d--flex ngx-flex--row ngpx-color-primary-1010 ngx-base-font-size--3 ngpx-actions-menu" *ngIf="(portalTopics$ | async)">
+    <div class="ngx-d--flex ngx-flex--row ngpx-color-primary-1010 ngx-base-font-size--3 ngpx-bgcolor-primary-100 ngpx-actions-menu" *ngIf="(portalTopics$ | async)">
       
       
       <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary" *ngFor="let item of (portalTopics$ | async)">

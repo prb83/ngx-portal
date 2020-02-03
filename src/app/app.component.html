@@ -20,14 +20,13 @@
       
       
       <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary" *ngFor="let item of (portalTopics$ | async)">
-        <h4 class="ngx-no-padding-margin ngpx-uppercase">{{item.name}}</h4>
+        <a class="ngx-basee-font--3 ngx-base-font--bold ngx-no-padding-margin ngpx-uppercase">{{item.name}}</a>
       </div>
       <div class="ngpx-bar ngpx-bar--middle">
         <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">
           <ngx-input-text [type]="'search'"></ngx-input-text>
         </div>
       </div>
-      <!-- <div class="ngpx-bar ngpx-bar--right">right</div> -->
     </div>
   </ngpx-web-module-bar>
   <main class="ngpx-portal-content ngpx-portal-content--web ngpx-bgcolor-primary-120">
@@ -47,11 +46,6 @@
       <main #contentWrapper class="ngpx-portal-content ngpx-portal-content--app ngx-p--relative">
         <router-outlet class=""></router-outlet>
       </main>
-      <!-- Right Panel implementation -->
-      <!-- <div class="ngx-portal-info" *ngIf=" isAuthenticated$"
-        [ngClass]="{'ngx-portal-info--is-active':(infoViewState$ | async), 'ngx-portal-info--is-inactive': !(infoViewState$ | async)}">
-        <ngx-right-panel-app></ngx-right-panel-app>
-      </div> -->
     </div>
     <!-- Spinner and overlay-->
       <!-- <section *ngIf="(overlayState$ | async)" class="overlay ngx-bg-grey-d--secondary ngx-w--100 ngx-h--100">

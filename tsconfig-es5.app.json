@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es5",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom", "esnext.asynciterable"],
+    "paths": {
+      "ngx-components": ["dist/ngx-components"],
+      "ngx-components/*": ["dist/ngx-components/*"],
+      "ngx-helper": ["dist/ngx-helper"],
+      "ngx-helper/*": ["dist/ngx-helper/*"],
+      "@env/*": ["src/environments/*"],
+      "ngx-core": ["dist/ngx-core"],
+      "ngx-core/*": ["dist/ngx-core/*"]
+    }
+  }
+}

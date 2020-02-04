@@ -143,11 +143,6 @@ export class AppComponent implements OnInit {
         this.initPortal(val.url)
       }
     })
-    /** ============================================================================
-     * auth & helper
-     *
-     =============================================================================*/
-
     // check authentification state ( needed for app view )
     this._ngxAuthService.authStatus.subscribe(authStatus => {
       if (authStatus.isAuthenticated) {
@@ -165,6 +160,10 @@ export class AppComponent implements OnInit {
    * view methods
    *
    =============================================================================*/
+   encodeUri = (link: string):string => {
+     console.log(decodeURIComponent(link.toLowerCase().replace(' ','-')))
+     return decodeURIComponent(link.toLowerCase().replace(' ','-'))
+   }
   /**
    * @description: currently set header ever to app only set active element to web or app
    * @memberOf AppComponent

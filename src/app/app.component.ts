@@ -160,10 +160,10 @@ export class AppComponent implements OnInit {
    * view methods
    *
    =============================================================================*/
-   encodeUri = (link: string):string => {
-     console.log(decodeURIComponent(link.toLowerCase().replace(' ','-')))
-     return decodeURIComponent(link.toLowerCase().replace(' ','-'))
-   }
+  encodeUri = (link: string): string => {
+    console.log(decodeURIComponent(link.toLowerCase().replace(' ', '-')))
+    return decodeURIComponent(link.toLowerCase().replace(' ', '-'))
+  }
   /**
    * @description: currently set header ever to app only set active element to web or app
    * @memberOf AppComponent

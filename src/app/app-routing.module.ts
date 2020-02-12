@@ -6,12 +6,12 @@ const routes: Routes = [
   {
     path: 'web',
     loadChildren:
-      './../../../ngx-portal-web/src/app/pages/pages.module#PagesModule',
+      () => import('./../../../ngx-portal-web/src/app/pages/pages.module').then(m => m.PagesModule),
   },
   {
     path: 'app',
     loadChildren:
-      './../../../ngx-portal-app/src/app/dashboard/dashboard.module#NgxDashboardModule',
+      () => import('./../../../ngx-portal-app/src/app/dashboard/dashboard.module').then(m => m.NgxDashboardModule),
     canActivate: [NgxAuthGuardService],
     data: {
       expectedRole: NgxRole.Admin,
@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'app/dashboard',
     loadChildren:
-      './../../../ngx-portal-app/src/app/dashboard/dashboard.module#NgxDashboardModule',
+      () => import('./../../../ngx-portal-app/src/app/dashboard/dashboard.module').then(m => m.NgxDashboardModule),
     canActivate: [NgxAuthGuardService],
     data: {
       expectedRole: NgxRole.Admin,
@@ -29,12 +29,12 @@ const routes: Routes = [
   {
     path: 'app/account',
     loadChildren:
-      './../../../ngx-portal-app/src/app/login/login.module#AppLoginModule',
+      () => import('./../../../ngx-portal-app/src/app/login/login.module').then(m => m.AppLoginModule),
   },
   {
     path: 'app/todo',
     loadChildren:
-      './../../../ngx-portal-app/src/app/todo/todo.module#NgxTodoModule',
+      () => import('./../../../ngx-portal-app/src/app/todo/todo.module').then(m => m.NgxTodoModule),
     canActivate: [NgxAuthGuardService],
     data: {
       expectedRole: NgxRole.Admin,
@@ -43,7 +43,7 @@ const routes: Routes = [
   {
     path: 'app/cms',
     loadChildren:
-      './../../../ngx-portal-app/src/app/cms/cms.module#NgxCmsModule',
+      () => import('./../../../ngx-portal-app/src/app/cms/cms.module').then(m => m.NgxCmsModule),
     canActivate: [NgxAuthGuardService],
     data: {
       expectedRole: NgxRole.Admin,
@@ -52,7 +52,7 @@ const routes: Routes = [
   {
     path: 'app/media',
     loadChildren:
-      './../../../ngx-portal-app/src/app/media/media.module#MediaModule',
+      () => import('./../../../ngx-portal-app/src/app/media/media.module').then(m => m.MediaModule),
     canActivate: [NgxAuthGuardService],
     data: {
       expectedRole: NgxRole.Admin,
@@ -61,7 +61,7 @@ const routes: Routes = [
   {
     path: 'app/weather',
     loadChildren:
-      './../../../ngx-portal-app/src/app/weather/weather.module#NgxWeatherModule',
+      () => import('./../../../ngx-portal-app/src/app/weather/weather.module').then(m => m.NgxWeatherModule),
     canActivate: [NgxAuthGuardService],
     data: {
       expectedRole: NgxRole.Admin,
@@ -70,7 +70,7 @@ const routes: Routes = [
   {
     path: 'app/learn',
     loadChildren:
-      './../../../ngx-portal-app/src/app/learn/learn.module#NgxLearnModule',
+      () => import('./../../../ngx-portal-app/src/app/learn/learn.module').then(m => m.NgxLearnModule),
     canActivate: [NgxAuthGuardService],
     data: {
       expectedRole: NgxRole.Admin,

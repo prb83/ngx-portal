@@ -6,7 +6,7 @@
   },
   "files": ["src/main.ts", "src/polyfills.ts"],
   "include": [
-    "src/**/*.ts",
+    "src/**/*.d.ts",
     "../ngx-portal-web/**/*.ts",
     "../ngx-portal-app/src/app/dashboard/**/*.ts",
     "../ngx-portal-app/src/app/login/**/*.ts",

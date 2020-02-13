@@ -20,7 +20,7 @@
       
       
       <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary" *ngFor="let item of (portalTopics$ | async)">
-        <h4 class="ngx-basee-font--3 ngx-base-font--bold ngx-no-padding-margin ngpx-uppercase" [routerLink]="[item.link.replace(' ','-')]">{{item.name}}</h4>
+        <h4 class="ngx-basee-font--3 ngx-base-font--bold ngx-no-padding-margin ngpx-uppercase ngpx-no--linebreak" [routerLink]="[item.link.replace(' ','-')]">{{item.name}}</h4>
       </div>
       <div class="ngpx-bar ngpx-bar--middle">
         <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">

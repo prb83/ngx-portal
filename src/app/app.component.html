@@ -19,10 +19,8 @@
     <div class="ngx-d--flex ngx-flex--row ngpx-color-primary-1010 ngx-base-font-size--3 ngpx-bgcolor-primary-100 ngpx-actions-menu" *ngIf="(portalTopics$ | async)">
       
       
-      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary"
-      [routerLink]="[item.link.replace(' ','-')]"
-      *ngFor="let item of (portalTopics$ | async)">
-        <h4 class="ngx-basee-font--3 ngx-base-font--bold ngx-no-padding-margin ngpx-uppercase" >{{item.name}}</h4>
+      <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary" *ngFor="let item of (portalTopics$ | async)">
+        <h4 class="ngx-basee-font--3 ngx-base-font--bold ngx-no-padding-margin ngpx-uppercase ngpx-no--linebreak" [routerLink]="[item.link.replace(' ','-')]">{{item.name}}</h4>
       </div>
       <div class="ngpx-bar ngpx-bar--middle">
         <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name ngx-hover ngx-hover--primary">

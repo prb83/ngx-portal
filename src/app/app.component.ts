@@ -161,7 +161,6 @@ export class AppComponent implements OnInit {
    *
    =============================================================================*/
   encodeUri = (link: string): string => {
-    console.log(decodeURIComponent(link.toLowerCase().replace(' ', '-')))
     return decodeURIComponent(link.toLowerCase().replace(' ', '-'))
   }
   /**

@@ -1,4 +1,5 @@
 <div class="ngx-portal-root ngx-base-font-family">
+
   <ngpx-header
     class="ngpx-portal-header"
     [view]="portalView"
@@ -17,8 +18,8 @@
 <ng-container *ngIf="portalView === 'web'">
   <ngpx-web-module-bar>
     <div class="ngx-d--flex ngx-flex--row ngpx-color-primary-1010 ngx-base-font-size--3 ngpx-bgcolor-primary-100 ngpx-actions-menu" *ngIf="(portalTopics$ | async)">
-      
-      
+
+
       <div class="ngpx-actions ngpx-actions--web ngpx-actions--application-name" *ngFor="let item of (portalTopics$ | async)">
        <a [routerLink]="[item.link.replace(' ','-')]" class="ngx-text-decoration--none ngx-hover ngx-hover--primary ngpx-color-primary-1010">
         <h4 class="ngx-base-font--3 ngx-base-font--bold ngx-no-padding-margin ngx-hover ngx-hover--primary ngpx-uppercase ngpx-no--linebreak" >{{item.name}}</h4>
@@ -35,8 +36,11 @@
     <router-outlet class=""></router-outlet>
   </main>
   <footer class="ngpx-portal-footer ngx-portal--dark ngx-base-font-size--3">
-    <span>@Brix-Running</span>
-    <span class=""> <a class="ngpx-portal-footer__link-impress ngpx-color-primary-100 ngx-hover ngx-hover--primary" [routerLink]="['/web/impressum/']">Impressum</a></span>
+    <div class="ngx-d--flex ngx-h--100 ngx-items-align--center">
+      <span>@Brix-Running</span>
+      <span class=""> <a class="ngpx-portal-footer__link-impress ngpx-color-primary-100 ngx-hover ngx-hover--primary" [routerLink]="['/web/impressum/']">Impressum</a></span>
+      <span class=""> <a class="ngpx-portal-footer__link-impress ngpx-color-primary-100 ngx-hover ngx-hover--primary" [routerLink]="['/web/cookies/']">Cookies</a></span>
+    </div>
   </footer>
 </ng-container>
 
@@ -49,22 +53,9 @@
         <router-outlet class=""></router-outlet>
       </main>
     </div>
-    <!-- Spinner and overlay-->
-      <!-- <section *ngIf="(overlayState$ | async)" class="overlay ngx-bg-grey-d--secondary ngx-w--100 ngx-h--100">
-        </section>
-          <section *ngIf="(spinnerState$ | async)" class="spinner">
-            <mat-spinner></mat-spinner>
-        </section> -->
-
-      <!-- Old sidebar -->
-        <!-- <ngx-sidebar-app [hidden]="!isAuthenticated$"
-        [sideNavigationActive]="(sideNavigationIsActive | async)"
-        [sideNavigationElements] = "sideNavigationElements"
-        [ngClass]="(sideNavigationIsActive | async) ? 'ngx-sidebar--is-active' : 'ngx-sidebar--is-inactive'"
-
-        (fireNavigationState)="fireNavigationState()"></ngx-sidebar-app> -->
-
 </ng-container>
 <!-- #end App Navigation -->
-
+<!-- <div class="modal" id="lightbox-imgModal"></div>
+<button class="modal-button" (click)="close()">hide</button>
+<button class="modal-button2" (click)="open()">show</button> -->
 </div>

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { NgxAuthGuardService, NgxRole } from 'projects/ngx-core/src/public_api'
-
 const routes: Routes = [
   {
     path: 'web',

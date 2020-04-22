@@ -4,9 +4,13 @@ import { Store } from '@ngrx/store'
 import { HeaderLink } from 'projects/ngx-components/src/lib/header/header'
 import * as Actions from 'projects/ngx-core/src/public_api'
 import { NgxAuthService } from 'projects/ngx-core/src/public_api'
-import { PortalWebConfiguration } from './config/header-config.model'
 import * as fromNgxRoot from './store/ngx.reducers'
-import { PagesWebService } from 'projects/ngx-components/src/public_api'
+import {
+  PagesWebService,
+  UiService,
+} from 'projects/ngx-components/src/public_api'
+import { UpdateworkerService } from './updateworker.service'
+import { ModalTestService } from 'projects/ngx-components/src/lib/modal-test.service'
 
 @Component({
   selector: 'ngx-portal-root',
@@ -14,8 +18,6 @@ import { PagesWebService } from 'projects/ngx-components/src/public_api'
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements OnInit {
-  // @description:
-  headerConfig: any
   // @description:
   config: any
   //  @description: view templates for web or app
@@ -132,12 +134,16 @@ export class AppComponent implements OnInit {
     private _router: Router,
     private _ngxAuthService: NgxAuthService,
     private store: Store<fromNgxRoot.State>,
-    private _pagesWebService: PagesWebService
-  ) {
-    this.headerConfig = new PortalWebConfiguration().headerConfig
-  }
+    private _pagesWebService: PagesWebService,
+    private _updateworkerService: UpdateworkerService,
+    private _uiService: UiService,
+    private _modalTestService: ModalTestService
+  ) {}
   ngOnInit(): void {
-    // check url by navigationend to deside if app or web view
+    this._updateworkerService.acitvateWorkerUpdate()
+    this._updateworkerService.checkWorkerUpdate()
+    this._updateworkerService.checkWorkerAndReload()
+
     this._router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
         this.initPortal(val.url)
@@ -155,11 +161,18 @@ export class AppComponent implements OnInit {
       // this.loadSidebarConfig(authStatus.isAuthenticated)
       // this.loadCustomConfigForSidebar()
     })
+    // this._uiService.showToast(`Update Available page will`, `Reload`)
   }
   /** ============================================================================
    * view methods
    *
    =============================================================================*/
+  close = () => {
+    this._modalTestService.closeModal()
+  }
+  open = () => {
+    this._modalTestService.openModal('someurl')
+  }
   encodeUri = (link: string): string => {
     return decodeURIComponent(link.toLowerCase().replace(' ', '-'))
   }

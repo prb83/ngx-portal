@@ -1,7 +1,7 @@
 {
   "name": "brix-running",
   "short_name": "brix-running",
-  "theme_color": "#0286cd",
+  "theme_color": "#2c5364",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": ".",

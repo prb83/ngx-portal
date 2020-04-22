@@ -7,6 +7,16 @@ if (environment.production) {
   enableProdMode()
 }
 
+// platformBrowserDynamic()
+//   .bootstrapModule(PortalModule)
+//   .catch(err => console.error(err))
+
 platformBrowserDynamic()
   .bootstrapModule(PortalModule)
-  .catch(err => console.error(err))
+  .then(() => {
+    if ('serviceWorker' in navigator && environment.production) {
+      console.log('production ngsw mode')
+      navigator.serviceWorker.register('ngsw-worker.js')
+    }
+  })
+  .catch(err => console.log(err))

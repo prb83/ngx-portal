@@ -1,10 +1,13 @@
 {
   "index": "/index.html",
   "assetGroups": [{
-      "name": "app",
+      "name": "app-shell",
       "installMode": "prefetch",
+      "updateMode":"prefetch",
       "resources": {
         "files": [
+          "/index.html",
+          "/manifext.json",
           "/favicon.ico",
           "/*.css",
           "/*.js"
